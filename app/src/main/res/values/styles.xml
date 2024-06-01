@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Tehanu_BottomsheetAnimation">
+        <item name="android:windowEnterAnimation">@anim/tehanu_bottomsheet_in</item>
+        <item name="android:windowExitAnimation">@anim/tehanu_bottomsheet_out</item>
+    </style>
+
+    <style name="Tehanu_BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Tehanu_BottomSheetStyleWrapper</item>
+    </style>
+
+    <style name="Tehanu_BottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+</resources>

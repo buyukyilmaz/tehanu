@@ -15,7 +15,7 @@ dependencyResolutionManagement {
 Add dependency to build.gradle.kts
 
 ```gradle
-implementation("com.github.buyukyilmaz:tehanu:1.0.0")
+implementation("com.github.buyukyilmaz:tehanu:1.0.1")
 ```
 
 ## AppConfig

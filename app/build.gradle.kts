@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     kotlin("android")
     id("org.jmailen.kotlinter")
+    `maven-publish`
 }
 
 android {
@@ -18,13 +19,6 @@ android {
     androidComponents {
         beforeVariants(selector().withBuildType("debug")) { variantBuilder ->
             variantBuilder.enable = false
-        }
-    }
-
-    libraryVariants.all {
-        outputs.all {
-            val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
-            output.outputFileName = "tehanu-1.0.0.aar"
         }
     }
 }
@@ -47,4 +41,17 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
     implementation("io.coil-kt:coil-compose:2.6.0")
     implementation("androidx.work:work-runtime-ktx:2.9.0")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            register("release", MavenPublication::class) {
+                from(components["release"])
+                groupId = "com.glorfindel.tehanu"
+                artifactId = "tehanu"
+                version = "1.0.0"
+            }
+        }
+    }
 }

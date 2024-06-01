@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/buyukyilmaz/tehanu.svg)](https://jitpack.io/#buyukyilmaz/tehanu)
+
 ## Setup
 
 Add jitpack.io to settings.gradle.kts

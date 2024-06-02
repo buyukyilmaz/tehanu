@@ -7,6 +7,7 @@ import com.glorfindel.tehanu.extension.isEven
 import com.glorfindel.tehanu.extension.isOdd
 import com.glorfindel.tehanu.extension.lessThan
 import com.glorfindel.tehanu.utils.Regexes
+import com.glorfindel.tehanu.visualTransformations.GsmTransformation
 
 fun validateInt(
     value: Int?,
@@ -204,6 +205,12 @@ fun validateString(
 
             is ValidationSpec.String.WrongEmail -> {
                 if (!value.isNullOrEmpty() && value.matches(Regexes.email).not()) {
+                    return ValidationResult(successful = false, message = it.message)
+                }
+            }
+
+            is ValidationSpec.String.WrongGsm -> {
+                if (value != null && GsmTransformation.isValid(value).not()) {
                     return ValidationResult(successful = false, message = it.message)
                 }
             }

@@ -59,5 +59,7 @@ sealed class ValidationSpec {
         data class LengthGreaterThan(val value: kotlin.Int, val message: kotlin.String? = null) : String()
 
         data class WrongEmail(val message: kotlin.String? = null) : String()
+
+        data class WrongGsm(val message: kotlin.String? = null) : String()
     }
 }

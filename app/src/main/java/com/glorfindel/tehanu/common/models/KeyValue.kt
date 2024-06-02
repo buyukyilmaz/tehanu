@@ -1,3 +1,7 @@
 package com.glorfindel.tehanu.common.models
 
-data class KeyValue<K, V>(val key: K, val value: V?)
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class KeyValue(val key: String, val value: String) : Parcelable

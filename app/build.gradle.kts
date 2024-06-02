@@ -48,7 +48,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.glorfindel.tehanu"
                 artifactId = "tehanu"
-                version = "1.0.2"
+                version = "1.0.3"
             }
         }
     }
